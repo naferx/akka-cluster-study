@@ -3,7 +3,7 @@ package com.github.naferx.cluster
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
 
-object ClusterApp extends App{
+object ClusterApp extends App {
 
   println("Starting clustered app...")
 
@@ -11,5 +11,6 @@ object ClusterApp extends App{
 
   val system = ActorSystem("ClusterApp", config)
 
+  val clusterListener = system.actorOf(SimpleClusterListener.props())
 
  }
