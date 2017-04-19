@@ -7,7 +7,7 @@ object ClusterApp extends App {
 
   println("Starting clustered app...")
 
-  val config = ConfigFactory.load()
+  val config = ConfigFactory.load("seed")
 
   val system = ActorSystem("ClusterApp", config)
 
